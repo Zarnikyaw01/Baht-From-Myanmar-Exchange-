@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baht to Myanmar Exchange</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .container { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 320px; text-align: center; }
+        h2 { color: #1a73e8; margin-bottom: 20px; }
+        input { width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 10px; font-size: 18px; box-sizing: border-box; outline: none; }
+        .result-label { font-size: 14px; color: #5f6368; margin-bottom: 5px; text-align: left; }
+        #result { background: #e8f0fe; padding: 15px; border-radius: 10px; font-size: 22px; font-weight: bold; color: #1967d2; min-height: 30px; }
+        .footer { margin-top: 15px; font-size: 12px; color: #9aa0a6; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Baht to MMK</h2>
+    <div class="result-label">ထိုင်းဘတ် (THB) ထည့်ပါ</div>
+    <input type="number" id="baht" placeholder="0" oninput="convert()">
+    
+    <div class="result-label">ရရှိမည့် မြန်မာကျပ် (MMK)</div>
+    <div id="result">0</div>
+    
+    <div class="footer">ယနေ့ပေါက်စျေး: 1 THB = 135 MMK</div>
+</div>
+
+<script>
+    function convert() {
+        let rate = 135; // ဤနေရာတွင် စျေးနှုန်းပြောင်းနိုင်သည်
+        let baht = document.getElementById('baht').value;
+        let resultDiv = document.getElementById('result');
+        
+        if (baht > 0) {
+            let total = baht * rate;
+            resultDiv.innerText = total.toLocaleString() + " ကျပ်";
+        } else {
+            resultDiv.innerText = "0";
+        }
+    }
+</script>
+
+</body>
+</html>
 
